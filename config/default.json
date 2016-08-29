@@ -1,0 +1,11 @@
+{
+	"bot": {
+		"braydenImage": "http://i.imgur.com/tElSrLw.png"
+	},
+	"discord": {
+		"botToken": ""
+	},
+	"youtube": {
+		"apiKey": ""
+	}
+}
