@@ -18,7 +18,7 @@ function playNextFromQueue(voice, stanley, causedByEvent) {
 		});
 
 		return voice.connection.playRawStream(stream, {
-			"volume": 1
+			"volume": 0.4
 		}).then((streamIntent) => {
 			voice.destroyStream = function() {
 				console.log("Destroying stream");
