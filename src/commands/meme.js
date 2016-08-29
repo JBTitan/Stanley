@@ -8,6 +8,5 @@ module.exports = {
 		return reddit.getImgurLink(["me_irl", "meirl", "meirl_"]).then((url) => {
 			return message.reply(url);
 		});
-	},
-	"shitpost": true
+	}
 };

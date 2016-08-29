@@ -10,6 +10,5 @@ module.exports = {
 			text += post.data.selftext;
 			return message.reply(text);
 		});
-	},
-	"shitpost": true
+	}
 };

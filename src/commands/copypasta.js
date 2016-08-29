@@ -8,6 +8,5 @@ module.exports = {
 		return reddit.getSelfPost(["copypasta"]).then((post) => {
 			return message.reply(post.data.selftext);
 		});
-	},
-	"shitpost": true
+	}
 };

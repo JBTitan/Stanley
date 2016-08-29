@@ -9,6 +9,5 @@ module.exports = {
 		} else {
 			return message.reply("User not found.");
 		}
-	},
-	"shitpost": true
+	}
 };

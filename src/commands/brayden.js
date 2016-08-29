@@ -6,6 +6,5 @@ module.exports = {
 	"description": "gay",
 	"command": (stanley, message, args) => {
 		return message.reply(config.get("bot.braydenImage"));
-	},
-	"shitpost": true
+	}
 };
