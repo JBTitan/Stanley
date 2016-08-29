@@ -1,11 +1,14 @@
 const config = require("config"),
 	Discord = require("discord.js"),
 	Path = require("path"),
+	pmx = require("pmx")
 	Promise = require("bluebird");
 
 const fs = Promise.promisifyAll(require("fs"));
 
 const stanley = new Discord.Client();
+
+const probe = pmx.probe();
 
 stanley.voice = {};
 
@@ -45,6 +48,18 @@ stanley.on("ready", () => {
 	return stanley.setStatus("online", "with ur mums weiner").then(() => {
 		return stanley.setUsername("Stanley");
 	}).then(() => {
+		probe.metric({
+			name: "Servers",
+			value: () => {
+				return stanley.servers.length;
+			}
+		});
+		probe.metric({
+			name: "Voice connections",
+			value: () => {
+				return stanley.voiceConnections.length;
+			}
+		})
 		return console.log("Ready!");
 	});
 });

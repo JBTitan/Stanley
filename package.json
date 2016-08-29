@@ -4,6 +4,7 @@
     "config": "^1.21.0",
     "discord.js": "^8.1.0",
     "mkdirp": "^0.5.1",
+    "pmx": "^0.6.3",
     "redditor": "^1.1.1",
     "youtube-search": "^1.0.6",
     "ytdl-core": "^0.7.17"
