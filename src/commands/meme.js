@@ -4,7 +4,7 @@ module.exports = {
 	"name": "meme",
 	"aliases": ["meem", "meam", "maymay"],
 	"description": "Sends a meme",
-	"command": function(stanley, message) {
+	"command": (stanley, message) => {
 		return reddit.getImgurLink(["me_irl", "meirl", "meirl_"]).then((url) => {
 			return message.reply(url);
 		});

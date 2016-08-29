@@ -7,7 +7,7 @@ module.exports = {
 	"name": "tag",
 	"aliases": ["tags", "t"],
 	"description": "Views/edits tags",
-	"command": function(stanley, message, args) {
+	"command": (stanley, message, args) => {
 		if (message.server) {
 			if (args.length === 0) {
 				// List tags

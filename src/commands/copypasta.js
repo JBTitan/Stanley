@@ -4,7 +4,7 @@ module.exports = {
 	"name": "copypasta",
 	"aliases": [],
 	"description": "Sends a copypasta",
-	"command": function(stanley, message) {
+	"command": (stanley, message) => {
 		return reddit.getSelfPost(["copypasta"]).then((post) => {
 			return message.reply(post.data.selftext);
 		});

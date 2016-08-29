@@ -4,7 +4,7 @@ module.exports = {
 	"name": "color",
 	"aliases": ["c"],
 	"description": "Sets a color",
-	"command": function(stanley, message, args) {
+	"command": (stanley, message, args) => {
 		if (message.server) {
 			let color = args[0];
 			if (color.startsWith("#")) {

@@ -4,7 +4,7 @@ module.exports = {
 	"name": "shittyreactiongif",
 	"aliases": ["shittyreactiongifs", "react", "reactshittily", "reaction", "shittyreaction", "shittyreactions"],
 	"description": "Sends a shitty reaction gif",
-	"command": function(stanley, message) {
+	"command": (stanley, message) => {
 		return reddit.getImgurLink(["shittyreactiongifs"]).then((url) => {
 			return message.reply(url);
 		});
