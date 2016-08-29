@@ -6,7 +6,7 @@ module.exports = {
 	"description": "Sends a shibe",
 	"command": (stanley, message) => {
 		return reddit.getImgurLink(["doge", "shiba", "shibe"]).then((url) => {
-			return stanley.reply(message, url);
+			return message.reply(url);
 		});
 	},
 	"shitpost": true

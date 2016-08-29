@@ -6,7 +6,7 @@ module.exports = {
 	"description": "Sends a copypasta",
 	"command": function(stanley, message) {
 		return reddit.getSelfPost(["copypasta"]).then((post) => {
-			return stanley.reply(message, post.data.selftext, {});
+			return message.reply(post.data.selftext, {});
 		});
 	},
 	"shitpost": true

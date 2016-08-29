@@ -11,10 +11,10 @@ module.exports = {
 				return playNextFromQueue(voice, stanley);
 			} else {
 				voice.queue.push(args[0]);
-				return stanley.reply(message, "Added to queue. Queue length is now " + voice.queue.length);
+				return message.reply("Added to queue. Queue length is now " + voice.queue.length);
 			}
 		} else {
-			return stanley.reply(message, "I'm not currently in a voice channel. You can summon me with `!summon`");
+			return message.reply("I'm not currently in a voice channel. You can summon me with `!summon`");
 		}
 	}
 }

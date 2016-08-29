@@ -5,9 +5,9 @@ module.exports = {
 	"command": function(stanley, message, args) {
 		let user = message.mentions[0];
 		if (user) {
-			return stanley.reply(message, user.avatarURL);
+			return message.reply(user.avatarURL);
 		} else {
-			return stanley.reply(message, "User not found.");
+			return message.reply("User not found.");
 		}
 	},
 	"shitpost": true

@@ -6,7 +6,7 @@ module.exports = {
 	"description": "Sends a shitty reaction gif",
 	"command": function(stanley, message) {
 		return reddit.getImgurLink(["shittyreactiongifs"]).then((url) => {
-			return stanley.reply(message, url);
+			return message.reply(url);
 		});
 	},
 	"shitpost": true

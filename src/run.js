@@ -34,9 +34,9 @@ stanley.on("message", function(message) {
 		let metoothanksregex = /(i ((want to )?(end (me|my life|this|it|everything|myself)|die|kill (myself|me)|commit suicide)|hate ((my )?life|me|myself|every(thing|one)|this))|fuck( my)? life)/i;
 
 		if (message.content.match(metoothanksregex)) {
-			return stanley.reply(message, "`me too, thanks`").catch(errHandler);
+			return message.reply("`me too, thanks`").catch(errHandler);
 		} else if (message.isMentioned(stanley.user)) {
-			return stanley.reply(message, "`no u`");
+			return message.reply("`no u`");
 		}
 	}
 });

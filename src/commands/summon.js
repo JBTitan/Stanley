@@ -9,7 +9,7 @@ module.exports = {
 					queue: [],
 					server: message.author.voiceChannel.server
 				};
-				return stanley.reply(message, "Joined voice channel " + connection.voiceChannel.name);
+				return message.reply("Joined voice channel " + connection.voiceChannel.name);
 			});
 		}
 	}

@@ -8,7 +8,7 @@ module.exports = {
 		return reddit.getSelfPost(["circlejerk"]).then((post) => {
 			let text = "**" + post.data.title + "**\n";
 			text += post.data.selftext;
-			return stanley.reply(message, text, {});
+			return message.reply(text, {});
 		});
 	},
 	"shitpost": true

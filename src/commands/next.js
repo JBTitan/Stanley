@@ -9,10 +9,10 @@ module.exports = {
 			if (voice.connection.playing) {
 				return playNextFromQueue(voice, stanley);
 			} else {
-				return stanley.reply(message, "I'm not playing anything, you hecking doofus.");
+				return message.reply("I'm not playing anything, you hecking doofus.");
 			}
 		} else {
-			return stanley.reply(message, "I'm not currently in a voice channel. You can summon me with `!summon`");
+			return message.reply("I'm not currently in a voice channel. You can summon me with `!summon`");
 		}
 	}
 }
