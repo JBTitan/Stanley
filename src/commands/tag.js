@@ -33,7 +33,7 @@ module.exports = {
 				//return message.reply("Not yet implemented.");
 			}
 		} else {
-			return new Promise((resolve, reject) => {resolve()});
+			return new Promise((resolve, reject) => {resolve();});
 		}
 	}
 };

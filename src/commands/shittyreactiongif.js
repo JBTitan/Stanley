@@ -10,4 +10,4 @@ module.exports = {
 		});
 	},
 	"shitpost": true
-}
+};

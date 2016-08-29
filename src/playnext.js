@@ -7,7 +7,7 @@ function playNextFromQueue(voice, stanley, causedByEvent) {
 		if (voice.destroyStream) {
 			voice.destroyStream();
 		}
-		return new Promise((resolve) => {resolve()});
+		return new Promise((resolve) => {resolve();});
 	}
 
 	let next = voice.queue.shift();
@@ -22,7 +22,7 @@ function playNextFromQueue(voice, stanley, causedByEvent) {
 		}).then((streamIntent) => {
 			voice.destroyStream = function() {
 				console.log("Destroying stream");
-				stream.destroy()
+				stream.destroy();
 			};
 			streamIntent.on("end", () => {
 				console.log("Stream ended.");

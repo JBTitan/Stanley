@@ -17,4 +17,4 @@ module.exports = {
 			return message.reply("I choose **" + options[0][1].trim() + "**");
 		});
 	}
-}
+};

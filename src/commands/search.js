@@ -8,7 +8,7 @@ module.exports = {
 	"name": "search",
 	"aliases": [],
 	"command": (stanley, message, args) => {
-		let voice = stanley.voice[message.channel.server.id]
+		let voice = stanley.voice[message.channel.server.id];
 		if (voice) {
 			return search(args.join(" "), {
 				"maxResults": 1,
@@ -30,4 +30,4 @@ module.exports = {
 			return message.reply("I'm not currently in a voice channel. You can summon me with `!summon`");
 		}
 	}
-}
+};

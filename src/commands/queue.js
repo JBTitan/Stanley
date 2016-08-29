@@ -2,7 +2,7 @@ module.exports = {
 	"name": "queue",
 	"aliases": [],
 	"command": (stanley, message, args) => {
-		let voice = stanley.voice[message.channel.server.id]
+		let voice = stanley.voice[message.channel.server.id];
 		if (voice) {
 			if (voice.queue.length > 0) {
 				return message.reply(voice.queue.join("\n"));
@@ -14,4 +14,4 @@ module.exports = {
 			return message.reply("I'm not currently in a voice channel. You can summon me with `!summon`");
 		}
 	}
-}
+};
