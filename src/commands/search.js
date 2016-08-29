@@ -8,7 +8,7 @@ module.exports = {
 	"name": "search",
 	"aliases": [],
 	"command": (stanley, message, args) => {
-		voice = stanley.voice[message.channel.server.id]
+		let voice = stanley.voice[message.channel.server.id]
 		if (voice) {
 			return search(args.join(" "), {
 				"maxResults": 1,

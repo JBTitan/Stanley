@@ -4,7 +4,7 @@ module.exports = {
 	"name": "next",
 	"aliases": ["skip"],
 	"command": (stanley, message, args) => {
-		voice = stanley.voice[message.channel.server.id]
+		let voice = stanley.voice[message.channel.server.id]
 		if (voice) {
 			if (voice.connection.playing) {
 				return playNextFromQueue(voice, stanley);

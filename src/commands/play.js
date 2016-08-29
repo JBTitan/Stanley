@@ -4,7 +4,7 @@ module.exports = {
 	"name": "play",
 	"aliases": [],
 	"command": (stanley, message, args) => {
-		voice = stanley.voice[message.channel.server.id]
+		let voice = stanley.voice[message.channel.server.id]
 		if (voice) {
 			if (voice.queue.length === 0 && !voice.connection.playing) {
 				voice.queue.push(args[0]);
