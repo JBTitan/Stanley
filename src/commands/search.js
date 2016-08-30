@@ -18,11 +18,15 @@ module.exports = {
 				let yturl = results[0].link;
 				console.log("Queueing %s", yturl);
 
-				if (voice.queue.length === 0 && !voice.connection.playing) {
-					voice.queue.push(yturl);
+				voice.queue.push({
+					url: yturl,
+					userid: message.author.id,
+					channelid: message.channel.id
+				});
+
+				if (voice.queue.length === 1 && !voice.connection.playing) {
 					return playNextFromQueue(voice, stanley);
 				} else {
-					voice.queue.push(yturl);
 					return message.reply("Added to queue. Queue length is now " + voice.queue.length);
 				}
 			});
