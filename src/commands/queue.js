@@ -5,7 +5,11 @@ module.exports = {
 		let voice = stanley.voice[message.channel.server.id];
 		if (voice) {
 			if (voice.queue.length > 0) {
-				return message.reply(voice.queue.join("\n"));
+				let items = [];
+				for (let i = 0; i < voice.queue.length; i++) {
+					items[i] = voice.queue[i].url;
+				}
+				return message.reply(items.join("\n"));
 			} else {
 				voice.queue.push(args[0]);
 				return message.reply("The queue is empty.");
