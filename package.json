@@ -6,6 +6,7 @@
     "mkdirp": "^0.5.1",
     "pmx": "^0.6.3",
     "redditor": "^1.1.1",
+    "urban": "^0.3.1",
     "youtube-search": "^1.0.6",
     "ytdl-core": "^0.7.17"
   }
