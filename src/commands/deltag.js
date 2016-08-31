@@ -9,9 +9,9 @@ module.exports = {
 	"command": (stanley, message, args) => {
 		if (message.server) {
 			if (args.length === 1) {
-				// Send tag args[0]
-				return fs.unlinkAsync("tags/" + message.server.id + "/" + args[0]).then((data) => {
-					return message.reply("Tag `" + args[0] + "` has been successfully deleted.");
+				let tagname = args[0].toLowerCase();
+				return fs.unlinkAsync("tags/" + message.server.id + "/" + tagname).then((data) => {
+					return message.reply("Tag `" + tagname + "` has been successfully deleted.");
 				}).catch((err) => {
 					return message.reply("There was an error deleting that tag.");
 				});
