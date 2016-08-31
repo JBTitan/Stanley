@@ -6,7 +6,7 @@ Stanley is a hecking DUMB Discord bot that's jam-packed with tons of STUPID feat
 
 # Getting Stanley for yourself
 
-Installing Stanley is as simple as sacrificing the blood of your first-born child to the Dark Lord and Savior, Master of the Dark Arts, Bill.
+Installing Stanley is as simple as sacrificing the blood of your first-born child to the Dark Lord and Savior, Master of the Arcane Arts, Bill.
 
 ## Prerequisites
 
