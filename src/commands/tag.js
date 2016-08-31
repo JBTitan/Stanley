@@ -12,7 +12,7 @@ module.exports = {
 			if (args.length === 0) {
 				// List tags
 				return fs.readdirAsync("tags/" + message.server.id).then((tags) => {
-					message.reply(tags.join(", "));
+					return message.reply(tags.join(", "));
 				});
 			}
 			if (args.length === 1) {
