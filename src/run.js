@@ -14,7 +14,7 @@ const probe = pmx.probe();
  * An index of all the voice connections that also holds their queues.
  * @type {Object}
  */
-stanley.voice = {};
+stanley.queue = {};
 
 /**
  * Handles generic errors and attempts to message them to the bot's master.
@@ -24,8 +24,8 @@ stanley.voice = {};
 function errHandler(err) {
 	console.error("Error:", err);
 
-	return stanley.sendMessage(config.get("bot.master"), "Encountered error ```\n" + err + "\n```").catch((err) => {
-		console.log("Error encountered trying to handle error: ", err);
+	return stanley.fetchUser(config.get("bot.master")).then((user) => {
+		return user.sendMessage("**Error**```\n" + err.stack + "\n```");
 	});
 }
 
@@ -63,21 +63,12 @@ stanley.on("message", function(message) {
 });
 
 stanley.on("ready", () => {
-	return stanley.setStatus("online", "with ur mums weiner").then(() => {
-		return stanley.setUsername("Stanley");
+	return stanley.user.setPresence({
+		"status": "online",
+		"game": "my jams"
 	}).then(() => {
-		probe.metric({
-			name: "Servers",
-			value: () => {
-				return stanley.servers.length;
-			}
-		});
-		probe.metric({
-			name: "Voice connections",
-			value: () => {
-				return stanley.voiceConnections.length;
-			}
-		})
+		return stanley.user.setUsername("Stanley");
+	}).then(() => {
 		return console.log("Ready!");
 	});
 });
@@ -87,5 +78,5 @@ fs.readdirAsync(Path.join(__dirname, "commands")).map((path) => {
 }).then((commands) => {
 	stanley.commands = commands;
 
-	return stanley.loginWithToken(config.get("discord.botToken"));
+	return stanley.login(config.get("discord.botToken"));
 });

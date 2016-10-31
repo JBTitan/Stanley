@@ -4,7 +4,7 @@ module.exports = {
 	"name": "play",
 	"aliases": [],
 	"command": (stanley, message, args) => {
-		let voice = stanley.voice[message.channel.server.id];
+		let voice = stanley.queue[message.guild.id];
 		if (voice) {
 			voice.queue.push({
 				url: args[0],

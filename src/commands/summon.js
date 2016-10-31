@@ -2,15 +2,18 @@ module.exports = {
 	"name": "summon",
 	"aliases": [],
 	"command": (stanley, message) => {
-		if (message.author.voiceChannel) {
-			return stanley.joinVoiceChannel(message.author.voiceChannel).then((connection) => {
-				stanley.voice[message.author.voiceChannel.server.id] = {
+		if (message.member && message.member.voiceChannel && message.member.voiceChannel.joinable) {
+			return message.member.voiceChannel.join().then((connection) => {
+				stanley.queue[message.guild.id] = {
 					connection: connection,
 					queue: [],
-					server: message.author.voiceChannel.server
+					server: message.guild.id
 				};
-				return message.reply("Joined voice channel " + connection.voiceChannel.name);
+
+				return message.reply("Joined voice channel " + message.member.voiceChannel.name);
 			});
+		} else {
+			return message.reply("You aren't in a voice channel");
 		}
 	}
 };

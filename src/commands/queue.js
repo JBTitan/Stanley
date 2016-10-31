@@ -2,7 +2,7 @@ module.exports = {
 	"name": "queue",
 	"aliases": [],
 	"command": (stanley, message, args) => {
-		let voice = stanley.voice[message.channel.server.id];
+		let voice = stanley.queue[message.channel.server.id];
 		if (voice) {
 			if (voice.queue.length > 0) {
 				let items = [];

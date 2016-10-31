@@ -28,20 +28,21 @@ function playNextFromQueue(voice, stanley, causedByEvent) {
 			if (info) {
 				let stream = ytdl.downloadFromInfo(info, {"filter": "audioonly"})
 
-				return voice.connection.playRawStream(stream, {
+				let dispatcher = voice.connection.playStream(stream, {
 					"volume": 0.4
-				}).then((streamIntent) => {
-					voice.destroyStream = function() {
-						console.log("Destroying stream");
-						stream.destroy();
-					};
-					streamIntent.on("end", () => {
-						console.log("Stream ended.");
-						playNextFromQueue(voice, stanley, true);
-					});
-
-					return stanley.sendMessage(next.channelid, "Now playing: **" + info.title + "**, requested by " + stanley.users.get("id", next.userid).mention() + ". Queue length is " + voice.queue.length + ".");
 				});
+
+				voice.destroyStream = function() {
+					console.log("Destroying stream");
+					stream.destroy();
+				};
+
+				dispatcher.on("end", () => {
+					console.log("Stream ended.");
+					playNextFromQueue(voice, stanley, true);
+				});
+
+				return next.channel.sendMessage("Now playing: **" + info.title + "**, requested by " + next.user + ". Queue length is " + voice.queue.length + ".");
 			} else {
 				return playNextFromQueue(voice, stanley);
 			}

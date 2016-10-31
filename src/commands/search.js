@@ -8,7 +8,7 @@ module.exports = {
 	"name": "search",
 	"aliases": [],
 	"command": (stanley, message, args) => {
-		let voice = stanley.voice[message.channel.server.id];
+		let voice = stanley.queue[message.guild.id];
 		if (voice) {
 			return search(args.join(" "), {
 				"maxResults": 1,
@@ -20,8 +20,8 @@ module.exports = {
 
 				voice.queue.push({
 					url: yturl,
-					userid: message.author.id,
-					channelid: message.channel.id
+					user: message.author,
+					channel: message.channel
 				});
 
 				if (voice.queue.length === 1 && !voice.connection.playing) {
