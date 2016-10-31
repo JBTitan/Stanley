@@ -10,12 +10,30 @@ const stanley = new Discord.Client();
 
 const probe = pmx.probe();
 
+/**
+ * An index of all the voice connections that also holds their queues.
+ * @type {Object}
+ */
 stanley.voice = {};
 
+/**
+ * Handles generic errors and attempts to message them to the bot's master.
+ * @param  {Error} err
+ * @return {Promise} promise
+ */
 function errHandler(err) {
-	console.log("Error:", err);
+	console.error("Error:", err);
+
+	return stanley.sendMessage(config.get("bot.master"), "Encountered error ```\n" + err + "\n```").catch((err) => {
+		console.log("Error encountered trying to handle error: ", err);
+	});
 }
 
+/**
+ * Returns a command by the specified name
+ * @param  {String} cmd - The name of the command to get
+ * @return {Command} command - The command by the specified name
+ */
 function getCommand(cmd) {
 	for (let i = 0; i < stanley.commands.length; i++) {
 		if (stanley.commands[i].name === cmd.toLowerCase() || stanley.commands[i].aliases.indexOf(cmd.toLowerCase()) > -1) {
@@ -68,5 +86,6 @@ fs.readdirAsync(Path.join(__dirname, "commands")).map((path) => {
 	return require(Path.join(__dirname, "commands", path));
 }).then((commands) => {
 	stanley.commands = commands;
+
 	return stanley.loginWithToken(config.get("discord.botToken"));
 });

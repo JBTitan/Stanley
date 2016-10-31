@@ -1,3 +1,10 @@
+/**
+ * reddit.js by dnaf feat. spaghetti code <3
+ *
+ * All of this code is complete crap that shouldn't exist, but it works well enough.
+ * If anyone wants to completely rewrite it, be my guest.
+ */
+
 const Promise = require("bluebird");
 
 const reddit = Promise.promisifyAll(require("redditor")),

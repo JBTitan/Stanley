@@ -1,6 +1,7 @@
 {
 	"bot": {
-		"braydenImage": "http://i.imgur.com/tElSrLw.png"
+		"braydenImage": "http://i.imgur.com/tElSrLw.png",
+		"master": ""
 	},
 	"discord": {
 		"botToken": ""
