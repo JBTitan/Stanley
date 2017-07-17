@@ -5,6 +5,8 @@
 [![Codacy grade](https://img.shields.io/codacy/grade/4b40bdd9644f436d8dec3e8564c0f97f.svg?maxAge=86400)](https://www.codacy.com/app/rectar2/Stanley?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dnaf/Stanley&amp;utm_campaign=Badge_Grade)
 [![David](https://img.shields.io/david/dnaf/Stanley.svg?maxAge=86400)](https://david-dm.org/dnaf/Stanley)
 
+***Stanley is no longer actively developed***
+
 # Say hello to Stanley
 
 Stanley is a hecking DUMB Discord bot that's jam-packed with tons of STUPID features, such as music playback, setting your username's color, rating waifus, tagging and returning images, sending memes, calculating Numberwang, and much more!
